@@ -1,0 +1,2229 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ws.grupojurad.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClienteGrupoJurad" targetNamespace="http://ws.grupojurad.com">
+<wsp:Policy wsu:Id="BasicHttpBinding_ClienteGrupoJurad_policy">
+<wsp:ExactlyOne>
+<wsp:All>
+<sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+<wsp:Policy>
+<sp:TransportToken>
+<wsp:Policy>
+<sp:HttpsToken RequireClientCertificate="false"/>
+</wsp:Policy>
+</sp:TransportToken>
+<sp:AlgorithmSuite>
+<wsp:Policy>
+<sp:Basic256/>
+</wsp:Policy>
+</sp:AlgorithmSuite>
+<sp:Layout>
+<wsp:Policy>
+<sp:Strict/>
+</wsp:Policy>
+</sp:Layout>
+</wsp:Policy>
+</sp:TransportBinding>
+</wsp:All>
+</wsp:ExactlyOne>
+</wsp:Policy>
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://ws.grupojurad.com">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/App"/>
+<xs:element name="buscarContraloria">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q1:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarContraloriaResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarContraloriaResult" nillable="true" type="q2:ContraloriaResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarDemandas">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q3:BusquedaDemandas"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarDemandasResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarDemandasResult" nillable="true" type="q4:DemandasResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarDian">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q5:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarDianResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarDianResult" nillable="true" type="q6:DianResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarContaduria">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q7:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarContaduriaResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarContaduriaResult" nillable="true" type="q8:ContaduriaResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarEsal">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q9:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarEsalResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarEsalResult" nillable="true" type="q10:EsalResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarFosyga">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q11:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarFosygaResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarFosygaResult" nillable="true" type="q12:FosygaResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNovedadesCamara">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q13:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNovedadesCamaraResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarNovedadesCamaraResult" nillable="true" type="q14:NovedadesCamaraResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarDatosBasicos">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q15:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarDatosBasicosResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarDatosBasicosResult" nillable="true" type="q16:DatosBasicosResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarPeps">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q17:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarPepsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarPepsResult" nillable="true" type="q18:PepsResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarProcuraduria">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q19:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarProcuraduriaResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarProcuraduriaResult" nillable="true" type="q20:ProcuraduriaResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRnt">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q21:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRntResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarRntResult" nillable="true" type="q22:RntResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRup">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q23:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRupResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarRupResult" nillable="true" type="q24:RupResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSarlaf">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q25:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSarlafResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSarlafResult" nillable="true" type="q26:SarlafResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSigep">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q27:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSigepResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSigepResult" nillable="true" type="q28:SigepResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRue">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q29:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRueResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarRueResult" nillable="true" type="q30:RueResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarListas">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q31:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarListasResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarListasResult" nillable="true" type="q32:ListasResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSimit">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q33:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSimitResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSimitResult" nillable="true" type="q34:SimitResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNoticias">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q35:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNoticiasResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarNoticiasResult" nillable="true" type="q36:NoticiasResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSisben">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q37:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSisbenResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSisbenResult" nillable="true" type="q38:SisbenResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSispro">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q39:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSisproResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSisproResult" nillable="true" type="q40:SisproResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSispro2">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q41:BusquedaSispro2"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSispro2Response">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSispro2Result" nillable="true" type="q42:SisproResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarEstadoCedula">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q43:BusquedaEstadoCedula"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarEstadoCedulaResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarEstadoCedulaResult" nillable="true" type="q44:EstadoCedulaResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSarlafVID">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q45:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarSarlafVIDResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarSarlafVIDResult" nillable="true" type="q46:SarlafVIDResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRelacionados">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q47:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarRelacionadosResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarRelacionadosResult" nillable="true" type="q48:RelacionadosResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNombramientos">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q49:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNombramientosResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarNombramientosResult" nillable="true" type="q50:NombramientosResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNovedadesRelacionadosPeps">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="busqueda" nillable="true" type="q51:Busqueda"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="buscarNovedadesRelacionadosPepsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/App" minOccurs="0" name="buscarNovedadesRelacionadosPepsResult" nillable="true" type="q52:NovedadesRelacionadosPepsResponse"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/">
+<xs:element name="anyType" nillable="true" type="xs:anyType"/>
+<xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+<xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+<xs:element name="boolean" nillable="true" type="xs:boolean"/>
+<xs:element name="byte" nillable="true" type="xs:byte"/>
+<xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+<xs:element name="decimal" nillable="true" type="xs:decimal"/>
+<xs:element name="double" nillable="true" type="xs:double"/>
+<xs:element name="float" nillable="true" type="xs:float"/>
+<xs:element name="int" nillable="true" type="xs:int"/>
+<xs:element name="long" nillable="true" type="xs:long"/>
+<xs:element name="QName" nillable="true" type="xs:QName"/>
+<xs:element name="short" nillable="true" type="xs:short"/>
+<xs:element name="string" nillable="true" type="xs:string"/>
+<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+<xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+<xs:element name="char" nillable="true" type="tns:char"/>
+<xs:simpleType name="char">
+<xs:restriction base="xs:int"/>
+</xs:simpleType>
+<xs:element name="duration" nillable="true" type="tns:duration"/>
+<xs:simpleType name="duration">
+<xs:restriction base="xs:duration">
+<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+<xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+<xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="guid" nillable="true" type="tns:guid"/>
+<xs:simpleType name="guid">
+<xs:restriction base="xs:string">
+<xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:attribute name="FactoryType" type="xs:QName"/>
+<xs:attribute name="Id" type="xs:ID"/>
+<xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/App" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/App">
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:complexType name="Busqueda">
+<xs:sequence>
+<xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Password" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IdClienteInterno" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IdTipoIdentificacion" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="NumeroIdentificacion" type="xs:long"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TimeOut" nillable="true" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Busqueda" nillable="true" type="tns:Busqueda"/>
+<xs:complexType name="ContraloriaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Fallos" nillable="true" type="tns:ArrayOfContraloriaFalloResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContraloriaResponse" nillable="true" type="tns:ContraloriaResponse"/>
+<xs:complexType name="ArrayOfContraloriaFalloResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ContraloriaFalloResponse" nillable="true" type="tns:ContraloriaFalloResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfContraloriaFalloResponse" nillable="true" type="tns:ArrayOfContraloriaFalloResponse"/>
+<xs:complexType name="ContraloriaFalloResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroFallo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaFallo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Cuantia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EntidadAfectada" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Reportante" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoResponsabilidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CodigoVerificacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContraloriaFalloResponse" nillable="true" type="tns:ContraloriaFalloResponse"/>
+<xs:complexType name="BusquedaDemandas">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:Busqueda">
+<xs:sequence>
+<xs:element minOccurs="0" name="Pagina" type="xs:int"/>
+<xs:element minOccurs="0" name="IncluirDemandasComoActor" type="xs:boolean"/>
+<xs:element minOccurs="0" name="IncluirCiviles" type="xs:boolean"/>
+<xs:element minOccurs="0" name="IncluirLaborales" type="xs:boolean"/>
+<xs:element minOccurs="0" name="IncluirFamiliares" type="xs:boolean"/>
+<xs:element minOccurs="0" name="IncluirPenales" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="BusquedaDemandas" nillable="true" type="tns:BusquedaDemandas"/>
+<xs:complexType name="DemandasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Demandas" nillable="true" type="tns:ArrayOfDemandaInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DemandasResponse" nillable="true" type="tns:DemandasResponse"/>
+<xs:complexType name="ArrayOfDemandaInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="DemandaInfo" nillable="true" type="tns:DemandaInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDemandaInfo" nillable="true" type="tns:ArrayOfDemandaInfo"/>
+<xs:complexType name="DemandaInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EsActor" type="xs:boolean"/>
+<xs:element minOccurs="0" name="EstadoProceso" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Expediente" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInicioProceso" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Juzgado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Localidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreDemandados" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreDemandantes" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdDemandados" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdDemandantes" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoCausa" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoJuzgado" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DemandaInfo" nillable="true" type="tns:DemandaInfo"/>
+<xs:complexType name="DianResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="EstatusNit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DigitoVerificador" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DianResponse" nillable="true" type="tns:DianResponse"/>
+<xs:complexType name="ContaduriaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Deudas" nillable="true" type="tns:ArrayOfDeudasResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContaduriaResponse" nillable="true" type="tns:ContaduriaResponse"/>
+<xs:complexType name="ArrayOfDeudasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="DeudasResponse" nillable="true" type="tns:DeudasResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDeudasResponse" nillable="true" type="tns:ArrayOfDeudasResponse"/>
+<xs:complexType name="DeudasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreReportado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EntidadReportante" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroObligacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaCorte" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EsIncumplimientoPago" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DeudasResponse" nillable="true" type="tns:DeudasResponse"/>
+<xs:complexType name="EsalResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CamaraNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Matricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UltimoAnioRenovado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaMatricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoMatriculaDesc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CantidadEmpleados" nillable="true" type="xs:string"/>
+<xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actividades" nillable="true" type="q1:ArrayOfstring"/>
+<xs:element minOccurs="0" name="TipoSociedad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoOrganizacionDesc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CategoriaMatriculaDesc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Afiliado" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="EsalResponse" nillable="true" type="tns:EsalResponse"/>
+<xs:complexType name="FosygaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="DatosEnResolucion" nillable="true" type="tns:ArrayOfDatosEnResolucionResponse"/>
+<xs:element minOccurs="0" name="PeriodosCompensados" nillable="true" type="tns:ArrayOfPeriodoCompensadoResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="FosygaResponse" nillable="true" type="tns:FosygaResponse"/>
+<xs:complexType name="ArrayOfDatosEnResolucionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="DatosEnResolucionResponse" nillable="true" type="tns:DatosEnResolucionResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDatosEnResolucionResponse" nillable="true" type="tns:ArrayOfDatosEnResolucionResponse"/>
+<xs:complexType name="DatosEnResolucionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UltimoPeriodoCompensado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EpsEoc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Norma" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DatosEnResolucionResponse" nillable="true" type="tns:DatosEnResolucionResponse"/>
+<xs:complexType name="ArrayOfPeriodoCompensadoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PeriodoCompensadoResponse" nillable="true" type="tns:PeriodoCompensadoResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPeriodoCompensadoResponse" nillable="true" type="tns:ArrayOfPeriodoCompensadoResponse"/>
+<xs:complexType name="PeriodoCompensadoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="EpsEoc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Periodo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DiasCompensados" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="TipoAfiliado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Norma" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PeriodoCompensadoResponse" nillable="true" type="tns:PeriodoCompensadoResponse"/>
+<xs:complexType name="NovedadesCamaraResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Novedades" nillable="true" type="tns:ArrayOfNovedadCamaraResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NovedadesCamaraResponse" nillable="true" type="tns:NovedadesCamaraResponse"/>
+<xs:complexType name="ArrayOfNovedadCamaraResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NovedadCamaraResponse" nillable="true" type="tns:NovedadCamaraResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNovedadCamaraResponse" nillable="true" type="tns:ArrayOfNovedadCamaraResponse"/>
+<xs:complexType name="NovedadCamaraResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="CodCamara" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MatriculaMercantil" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DigitoVerificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroRegistracion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaRadicacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Monto" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NovedadCamaraResponse" nillable="true" type="tns:NovedadCamaraResponse"/>
+<xs:complexType name="DatosBasicosResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoCedula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoPersona" type="xs:unsignedByte"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DatosBasicosResponse" nillable="true" type="tns:DatosBasicosResponse"/>
+<xs:complexType name="PepsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Registros" nillable="true" type="tns:ArrayOfPepsResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PepsResponse" nillable="true" type="tns:PepsResponse"/>
+<xs:complexType name="ArrayOfPepsResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PepsResponseInfo" nillable="true" type="tns:PepsResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPepsResponseInfo" nillable="true" type="tns:ArrayOfPepsResponseInfo"/>
+<xs:complexType name="PepsResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Coincidencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PorcentajeCoincidencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ListasTipoIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ListasNroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ListasNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreLista" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OrigenLista" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RelacionadoCon" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUpdate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Conclusion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Atencion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PedidoTipoId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PedidoNroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PedidoNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreBase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdentificacionValido" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroNombreValidos" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Actividad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoPersonaNatural" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoMatricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoNitPersonaJuridica" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Cargo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Dependencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PeriodoCargo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TextoLargo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Link" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="publicacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PepsResponseInfo" nillable="true" type="tns:PepsResponseInfo"/>
+<xs:complexType name="ProcuraduriaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="TieneNovedades" type="xs:boolean"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Antecedentes" nillable="true" type="tns:ArrayOfAntecedentesResponse"/>
+<xs:element minOccurs="0" name="Inhabilidades" nillable="true" type="tns:ArrayOfInhabilidadesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ProcuraduriaResponse" nillable="true" type="tns:ProcuraduriaResponse"/>
+<xs:complexType name="ArrayOfAntecedentesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AntecedentesResponse" nillable="true" type="tns:AntecedentesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAntecedentesResponse" nillable="true" type="tns:ArrayOfAntecedentesResponse"/>
+<xs:complexType name="AntecedentesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="TipoAntecedente" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroSiri" type="xs:long"/>
+<xs:element minOccurs="0" name="Sanciones" nillable="true" type="tns:ArrayOfSancionResponse"/>
+<xs:element minOccurs="0" name="Delitos" nillable="true" type="tns:ArrayOfDelitoResponse"/>
+<xs:element minOccurs="0" name="ProfesionesLiberales" nillable="true" type="tns:ArrayOfProfesionesLiberalesResponse"/>
+<xs:element minOccurs="0" name="Instancias" nillable="true" type="tns:ArrayOfInstanciaResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AntecedentesResponse" nillable="true" type="tns:AntecedentesResponse"/>
+<xs:complexType name="ArrayOfSancionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SancionResponse" nillable="true" type="tns:SancionResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSancionResponse" nillable="true" type="tns:ArrayOfSancionResponse"/>
+<xs:complexType name="SancionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Sancion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Termino" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaFinInhabilidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ClaseSancion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Entidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Suspendida" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Autoridad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoActo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaActo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FormaPago" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PagoTotal" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Inhabilidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Causal" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SancionResponse" nillable="true" type="tns:SancionResponse"/>
+<xs:complexType name="ArrayOfDelitoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="DelitoResponse" nillable="true" type="tns:DelitoResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDelitoResponse" nillable="true" type="tns:ArrayOfDelitoResponse"/>
+<xs:complexType name="DelitoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Delito" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DelitoResponse" nillable="true" type="tns:DelitoResponse"/>
+<xs:complexType name="ArrayOfProfesionesLiberalesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ProfesionesLiberalesResponse" nillable="true" type="tns:ProfesionesLiberalesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfProfesionesLiberalesResponse" nillable="true" type="tns:ArrayOfProfesionesLiberalesResponse"/>
+<xs:complexType name="ProfesionesLiberalesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Sancion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Termino" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaFinalizacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ClaseSancion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Profesion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RegistroProfesional" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ProfesionesLiberalesResponse" nillable="true" type="tns:ProfesionesLiberalesResponse"/>
+<xs:complexType name="ArrayOfInstanciaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="InstanciaResponse" nillable="true" type="tns:InstanciaResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfInstanciaResponse" nillable="true" type="tns:ArrayOfInstanciaResponse"/>
+<xs:complexType name="InstanciaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Autoridad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaProvidencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaEfectoJuridico" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="InstanciaResponse" nillable="true" type="tns:InstanciaResponse"/>
+<xs:complexType name="ArrayOfInhabilidadesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="InhabilidadesResponse" nillable="true" type="tns:InhabilidadesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfInhabilidadesResponse" nillable="true" type="tns:ArrayOfInhabilidadesResponse"/>
+<xs:complexType name="InhabilidadesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroSiri" type="xs:long"/>
+<xs:element minOccurs="0" name="Modulo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Inhabilitadad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="InhabilidadesResponse" nillable="true" type="tns:InhabilidadesResponse"/>
+<xs:complexType name="RntResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Rnt" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UltimoAnioActualizado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Categoria" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SubCategoria" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DireccionComercial" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Celular" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TotalEmpleados" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RepresentanteLegal" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ClaseId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NumId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EmailPrestador" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TelefonoPrestador" nillable="true" type="xs:string"/>
+<xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actividades" nillable="true" type="q2:ArrayOfstring"/>
+<xs:element minOccurs="0" name="Camara" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RntResponse" nillable="true" type="tns:RntResponse"/>
+<xs:complexType name="RupResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Proponentes" nillable="true" type="tns:ArrayOfProponenteResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RupResponse" nillable="true" type="tns:RupResponse"/>
+<xs:complexType name="ArrayOfProponenteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ProponenteResponse" nillable="true" type="tns:ProponenteResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfProponenteResponse" nillable="true" type="tns:ArrayOfProponenteResponse"/>
+<xs:complexType name="ProponenteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="CodCamara" type="xs:short"/>
+<xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IdTipoIdentificacion" nillable="true" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DigitoVerificador" nillable="true" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="NroInscripcion" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaRenovacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInscripcion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoProponente" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Sigla" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaCancelacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Multas" nillable="true" type="tns:ArrayOfMultasResponse"/>
+<xs:element minOccurs="0" name="Noticias" nillable="true" type="tns:ArrayOfNoticiasRupResponse"/>
+<xs:element minOccurs="0" name="Contratos" nillable="true" type="tns:ArrayOfContratosResponse"/>
+<xs:element minOccurs="0" name="Sanciones" nillable="true" type="tns:ArrayOfSancionesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ProponenteResponse" nillable="true" type="tns:ProponenteResponse"/>
+<xs:complexType name="ArrayOfMultasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="MultasResponse" nillable="true" type="tns:MultasResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfMultasResponse" nillable="true" type="tns:ArrayOfMultasResponse"/>
+<xs:complexType name="MultasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroContrato" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NitEntidad" type="xs:long"/>
+<xs:element minOccurs="0" name="NombreEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MunicipioEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SeccionalEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoAdministrativo" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoAdministrativo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaEjecutoria" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorMulta" nillable="true" type="xs:long"/>
+<xs:element minOccurs="0" name="ValorPagadoMulta" nillable="true" type="xs:long"/>
+<xs:element minOccurs="0" name="NroActoSuspension" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoSuspension" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoConfirmacion" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoConfirmacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoRevocacion" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoRevocacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="MultasResponse" nillable="true" type="tns:MultasResponse"/>
+<xs:complexType name="ArrayOfNoticiasRupResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NoticiasRupResponse" nillable="true" type="tns:NoticiasRupResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNoticiasRupResponse" nillable="true" type="tns:ArrayOfNoticiasRupResponse"/>
+<xs:complexType name="NoticiasRupResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Acto" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Noticia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NoticiasRupResponse" nillable="true" type="tns:NoticiasRupResponse"/>
+<xs:complexType name="ArrayOfContratosResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ContratosResponse" nillable="true" type="tns:ContratosResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfContratosResponse" nillable="true" type="tns:ArrayOfContratosResponse"/>
+<xs:complexType name="ContratosResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroContrato" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NitEntidad" type="xs:long"/>
+<xs:element minOccurs="0" name="NombreEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MunicipioEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SeccionalEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAdjudicacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaPerfeccionamiento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaTerminacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaLiquidacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorContrato" nillable="true" type="xs:long"/>
+<xs:element minOccurs="0" name="ValorPagado" nillable="true" type="xs:long"/>
+<xs:element minOccurs="0" name="EstadoContrato" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoContratista" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaTerminacionAnticipada" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MotivoTerminacionAnticipada" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ClasificacionLey1464" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ClasificacionCiiu" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContratosResponse" nillable="true" type="tns:ContratosResponse"/>
+<xs:complexType name="ArrayOfSancionesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SancionesResponse" nillable="true" type="tns:SancionesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSancionesResponse" nillable="true" type="tns:ArrayOfSancionesResponse"/>
+<xs:complexType name="SancionesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroContrato" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NitEntidad" type="xs:long"/>
+<xs:element minOccurs="0" name="NombreEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MunicipioEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SeccionalEntidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoAdministrativo" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoAdministrativo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaEjecutoria" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CondicionIncumplimiento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DescripcionSancion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoSuspension" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoSuspension" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoConfirmacion" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoConfirmacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroActoRevocacion" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="FechaActoRevocacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="VigenciaSancion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SancionesResponse" nillable="true" type="tns:SancionesResponse"/>
+<xs:complexType name="SarlafResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="ListasResponse" nillable="true" type="tns:ArrayOfListasResponseInfo"/>
+<xs:element minOccurs="0" name="PepsResponse" nillable="true" type="tns:ArrayOfPepsResponseInfo"/>
+<xs:element minOccurs="0" name="NoticiasResponse" nillable="true" type="tns:ArrayOfNoticiasResponseInfo"/>
+<xs:element minOccurs="0" name="NovedadesMonitoreoResponse" nillable="true" type="tns:ArrayOfNovedadesMonitoreoResponseInfo"/>
+<xs:element minOccurs="0" name="NovedadesListasResponse" nillable="true" type="tns:ArrayOfNovedadesListasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SarlafResponse" nillable="true" type="tns:SarlafResponse"/>
+<xs:complexType name="ArrayOfListasResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ListasResponseInfo" nillable="true" type="tns:ListasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfListasResponseInfo" nillable="true" type="tns:ArrayOfListasResponseInfo"/>
+<xs:complexType name="ListasResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Coincidencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PorcentajeCoincidencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ListasTipoIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ListasNroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ListasNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NacionalidadListas" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreLista" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OrigenLista" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Hecho" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Delito" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UltFechaBoletin" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RelacionadoCon" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Conclusion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Riesgo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PedidoTipoId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PedidoNroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PedidoNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreBase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdentificacionValido" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroNombreValidos" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Actividad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoPersonaNatural" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nacionalidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoMatricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoNitPersonaJuridica" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TextoLargo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Link" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ListasResponseInfo" nillable="true" type="tns:ListasResponseInfo"/>
+<xs:complexType name="ArrayOfNoticiasResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NoticiasResponseInfo" nillable="true" type="tns:NoticiasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNoticiasResponseInfo" nillable="true" type="tns:ArrayOfNoticiasResponseInfo"/>
+<xs:complexType name="NoticiasResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="EntidadoEmpresa" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PrimerNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SegundoNombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LugarExpedicion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MedioFuente" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MedioSeccion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TituloNoticia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoDelito" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Edad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LinkFuente" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ImplicadooRelacionado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Coincidencia" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NoticiasResponseInfo" nillable="true" type="tns:NoticiasResponseInfo"/>
+<xs:complexType name="ArrayOfNovedadesMonitoreoResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NovedadesMonitoreoResponseInfo" nillable="true" type="tns:NovedadesMonitoreoResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNovedadesMonitoreoResponseInfo" nillable="true" type="tns:ArrayOfNovedadesMonitoreoResponseInfo"/>
+<xs:complexType name="NovedadesMonitoreoResponseInfo">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:NovedadesResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="FechaAlertaABM" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="NovedadesMonitoreoResponseInfo" nillable="true" type="tns:NovedadesMonitoreoResponseInfo"/>
+<xs:complexType name="NovedadesResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="DenominacionMonitoreada" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DenominacionEncontrada" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PorcentajeCoincidenciaDenominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoNovedad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Novedad" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NovedadesResponseInfo" nillable="true" type="tns:NovedadesResponseInfo"/>
+<xs:complexType name="ArrayOfNovedadesListasResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NovedadesListasResponseInfo" nillable="true" type="tns:NovedadesListasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNovedadesListasResponseInfo" nillable="true" type="tns:ArrayOfNovedadesListasResponseInfo"/>
+<xs:complexType name="NovedadesListasResponseInfo">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:NovedadesResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="FechaNovedad" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="NovedadesListasResponseInfo" nillable="true" type="tns:NovedadesListasResponseInfo"/>
+<xs:complexType name="SigepResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Sigep" nillable="true" type="tns:ArrayOfSigepInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SigepResponse" nillable="true" type="tns:SigepResponse"/>
+<xs:complexType name="ArrayOfSigepInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SigepInfo" nillable="true" type="tns:SigepInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSigepInfo" nillable="true" type="tns:ArrayOfSigepInfo"/>
+<xs:complexType name="SigepInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="CargoActual" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Cargos" nillable="true" type="tns:ArrayOfCargoInfo"/>
+<xs:element minOccurs="0" name="Contacto1" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Contacto2" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Contratos" nillable="true" type="tns:ArrayOfContratoInfo"/>
+<xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FormacionAcademica" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Institucion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MunicipioNacimiento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Nro" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SigepInfo" nillable="true" type="tns:SigepInfo"/>
+<xs:complexType name="ArrayOfCargoInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="CargoInfo" nillable="true" type="tns:CargoInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfCargoInfo" nillable="true" type="tns:ArrayOfCargoInfo"/>
+<xs:complexType name="CargoInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Cargo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Institucion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CargoInfo" nillable="true" type="tns:CargoInfo"/>
+<xs:complexType name="ArrayOfContratoInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ContratoInfo" nillable="true" type="tns:ContratoInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfContratoInfo" nillable="true" type="tns:ArrayOfContratoInfo"/>
+<xs:complexType name="ContratoInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="FechaFin" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Institucion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Monto" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Objeto" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContratoInfo" nillable="true" type="tns:ContratoInfo"/>
+<xs:complexType name="RueResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Matriculas" nillable="true" type="tns:ArrayOfMatriculaResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RueResponse" nillable="true" type="tns:RueResponse"/>
+<xs:complexType name="ArrayOfMatriculaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="MatriculaResponse" nillable="true" type="tns:MatriculaResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfMatriculaResponse" nillable="true" type="tns:ArrayOfMatriculaResponse"/>
+<xs:complexType name="MatriculaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Camara" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Matricula" type="xs:long"/>
+<xs:element minOccurs="0" name="FechaMatricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaRenovacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UltimoAñoRenovado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaVigencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaCancelacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoOrganizacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoSociedad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CategoriaMatricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Afiliado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoMatricula" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BeneficiarioLey1429" nillable="true" type="xs:boolean"/>
+<xs:element minOccurs="0" name="CantidadEmpleados" nillable="true" type="xs:int"/>
+<xs:element minOccurs="0" name="Actividades" nillable="true" type="tns:ArrayOfActividadesResponse"/>
+<xs:element minOccurs="0" name="RepresentantesLegales" nillable="true" type="tns:ArrayOfRepresentantesLegalesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="MatriculaResponse" nillable="true" type="tns:MatriculaResponse"/>
+<xs:complexType name="ArrayOfActividadesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ActividadesResponse" nillable="true" type="tns:ActividadesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfActividadesResponse" nillable="true" type="tns:ArrayOfActividadesResponse"/>
+<xs:complexType name="ActividadesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="CodActividad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ActividadesResponse" nillable="true" type="tns:ActividadesResponse"/>
+<xs:complexType name="ArrayOfRepresentantesLegalesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="RepresentantesLegalesResponse" nillable="true" type="tns:RepresentantesLegalesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfRepresentantesLegalesResponse" nillable="true" type="tns:ArrayOfRepresentantesLegalesResponse"/>
+<xs:complexType name="RepresentantesLegalesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Cargo" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RepresentantesLegalesResponse" nillable="true" type="tns:RepresentantesLegalesResponse"/>
+<xs:complexType name="ListasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Registros" nillable="true" type="tns:ArrayOfListasResponseInfo"/>
+<xs:element minOccurs="0" name="NovedadesMonitoreoResponse" nillable="true" type="tns:ArrayOfNovedadesMonitoreoResponseInfo"/>
+<xs:element minOccurs="0" name="NovedadesListasResponse" nillable="true" type="tns:ArrayOfNovedadesListasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ListasResponse" nillable="true" type="tns:ListasResponse"/>
+<xs:complexType name="SimitResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="TipoIdentificacion" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="NroIdentificacion" type="xs:long"/>
+<xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoLicencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaCancelacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaExpedicion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Resoluciones" nillable="true" type="tns:ArrayOfSimitResolucionesInfo"/>
+<xs:element minOccurs="0" name="Comparendos" nillable="true" type="tns:ArrayOfSimitComparendosInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SimitResponse" nillable="true" type="tns:SimitResponse"/>
+<xs:complexType name="ArrayOfSimitResolucionesInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SimitResolucionesInfo" nillable="true" type="tns:SimitResolucionesInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSimitResolucionesInfo" nillable="true" type="tns:ArrayOfSimitResolucionesInfo"/>
+<xs:complexType name="SimitResolucionesInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Resolucion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Comparendo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaComparendo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Secretaria" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreInfractor" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MultaDesc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorMulta" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="InteresMora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorAdicional" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorAPagar" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SimitResolucionesInfo" nillable="true" type="tns:SimitResolucionesInfo"/>
+<xs:complexType name="ArrayOfSimitComparendosInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SimitComparendosInfo" nillable="true" type="tns:SimitComparendosInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSimitComparendosInfo" nillable="true" type="tns:ArrayOfSimitComparendosInfo"/>
+<xs:complexType name="SimitComparendosInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Comparendo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Secretaria" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreInfractor" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MultaDesc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorMulta" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorAdicional" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Total" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorAPagar" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SimitComparendosInfo" nillable="true" type="tns:SimitComparendosInfo"/>
+<xs:complexType name="NoticiasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Registros" nillable="true" type="tns:ArrayOfNoticiasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NoticiasResponse" nillable="true" type="tns:NoticiasResponse"/>
+<xs:complexType name="SisbenResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Registros" nillable="true" type="tns:ArrayOfSisbenResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SisbenResponse" nillable="true" type="tns:SisbenResponse"/>
+<xs:complexType name="ArrayOfSisbenResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SisbenResponseInfo" nillable="true" type="tns:SisbenResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSisbenResponseInfo" nillable="true" type="tns:ArrayOfSisbenResponseInfo"/>
+<xs:complexType name="SisbenResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Nombres" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroArea" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Ficha" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Puntaje" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaModificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaCorteBase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="GrupoLetra" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="VersionSisben" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="GrupoSisben" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaConsulta" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaEncuesta" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaActualizacionCiudadano" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaActualizacionAdministrativos" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SisbenResponseInfo" nillable="true" type="tns:SisbenResponseInfo"/>
+<xs:complexType name="SisproResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="TipoIdentificacion" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="NroIdentificacion" type="xs:long"/>
+<xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaDatosBasicos" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacionesASalud" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AfiliacionesASalud" nillable="true" type="tns:ArrayOfAfiliacionesASaludResponse"/>
+<xs:element minOccurs="0" name="AfiliacionesAPensiones" nillable="true" type="tns:ArrayOfAfiliacionesAPensionesResponse"/>
+<xs:element minOccurs="0" name="AfiliacionesARiesgosProfesionales" nillable="true" type="tns:ArrayOfAfiliacionesARiesgosProfesionalesResponse"/>
+<xs:element minOccurs="0" name="AfiliacionesACompensacionFamiliar" nillable="true" type="tns:ArrayOfAfiliacionesACompensacionFamiliarResponse"/>
+<xs:element minOccurs="0" name="AfiliacionesACesantias" nillable="true" type="tns:ArrayOfAfiliacionesACesantiasResponse"/>
+<xs:element minOccurs="0" name="VinculacionesAAsistenciaSocial" nillable="true" type="tns:ArrayOfVinculacionesAAsistenciaSocialResponse"/>
+<xs:element minOccurs="0" name="Pensiones" nillable="true" type="tns:ArrayOfPensionesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SisproResponse" nillable="true" type="tns:SisproResponse"/>
+<xs:complexType name="ArrayOfAfiliacionesASaludResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AfiliacionesASaludResponse" nillable="true" type="tns:AfiliacionesASaludResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAfiliacionesASaludResponse" nillable="true" type="tns:ArrayOfAfiliacionesASaludResponse"/>
+<xs:complexType name="AfiliacionesASaludResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Regimen" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Administradora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoAfiliado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UbicacionAfiliacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AfiliacionesASaludResponse" nillable="true" type="tns:AfiliacionesASaludResponse"/>
+<xs:complexType name="ArrayOfAfiliacionesAPensionesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AfiliacionesAPensionesResponse" nillable="true" type="tns:AfiliacionesAPensionesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAfiliacionesAPensionesResponse" nillable="true" type="tns:ArrayOfAfiliacionesAPensionesResponse"/>
+<xs:complexType name="AfiliacionesAPensionesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Regimen" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Administradora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Subsidiada" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AfiliacionesAPensionesResponse" nillable="true" type="tns:AfiliacionesAPensionesResponse"/>
+<xs:complexType name="ArrayOfAfiliacionesARiesgosProfesionalesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AfiliacionesARiesgosProfesionalesResponse" nillable="true" type="tns:AfiliacionesARiesgosProfesionalesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAfiliacionesARiesgosProfesionalesResponse" nillable="true" type="tns:ArrayOfAfiliacionesARiesgosProfesionalesResponse"/>
+<xs:complexType name="AfiliacionesARiesgosProfesionalesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Regimen" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Administradora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ActividadEconomicaDeRiesgo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UbicacionLaboral" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AfiliacionesARiesgosProfesionalesResponse" nillable="true" type="tns:AfiliacionesARiesgosProfesionalesResponse"/>
+<xs:complexType name="ArrayOfAfiliacionesACompensacionFamiliarResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AfiliacionesACompensacionFamiliarResponse" nillable="true" type="tns:AfiliacionesACompensacionFamiliarResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAfiliacionesACompensacionFamiliarResponse" nillable="true" type="tns:ArrayOfAfiliacionesACompensacionFamiliarResponse"/>
+<xs:complexType name="AfiliacionesACompensacionFamiliarResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Administradora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoMiembro" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoAfiliado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UbicacionLaboral" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AfiliacionesACompensacionFamiliarResponse" nillable="true" type="tns:AfiliacionesACompensacionFamiliarResponse"/>
+<xs:complexType name="ArrayOfAfiliacionesACesantiasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AfiliacionesACesantiasResponse" nillable="true" type="tns:AfiliacionesACesantiasResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAfiliacionesACesantiasResponse" nillable="true" type="tns:ArrayOfAfiliacionesACesantiasResponse"/>
+<xs:complexType name="AfiliacionesACesantiasResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Regimen" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Administradora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaAfiliacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UbicacionLaboral" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AfiliacionesACesantiasResponse" nillable="true" type="tns:AfiliacionesACesantiasResponse"/>
+<xs:complexType name="ArrayOfVinculacionesAAsistenciaSocialResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="VinculacionesAAsistenciaSocialResponse" nillable="true" type="tns:VinculacionesAAsistenciaSocialResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfVinculacionesAAsistenciaSocialResponse" nillable="true" type="tns:ArrayOfVinculacionesAAsistenciaSocialResponse"/>
+<xs:complexType name="VinculacionesAAsistenciaSocialResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Administradora" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Programa" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaVinculacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoVinculacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoBeneficio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoBeneficio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoSubsidio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimoBeneficio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ValorBeneficio" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="UbicacionEntregaBeneficio" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="VinculacionesAAsistenciaSocialResponse" nillable="true" type="tns:VinculacionesAAsistenciaSocialResponse"/>
+<xs:complexType name="ArrayOfPensionesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PensionesResponse" nillable="true" type="tns:PensionesResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPensionesResponse" nillable="true" type="tns:ArrayOfPensionesResponse"/>
+<xs:complexType name="PensionesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Pagador" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaResolucion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoPension" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoPension" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Modalidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoPensionado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroResolucion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PensionCompartida" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PensionesResponse" nillable="true" type="tns:PensionesResponse"/>
+<xs:complexType name="BusquedaSispro2">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:Busqueda">
+<xs:sequence>
+<xs:element minOccurs="0" name="FechaCedulacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="BusquedaSispro2" nillable="true" type="tns:BusquedaSispro2"/>
+<xs:complexType name="BusquedaEstadoCedula">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:Busqueda">
+<xs:sequence>
+<xs:element minOccurs="0" name="FechaCedulacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="BusquedaEstadoCedula" nillable="true" type="tns:BusquedaEstadoCedula"/>
+<xs:complexType name="EstadoCedulaResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoCedula" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="EstadoCedulaResponse" nillable="true" type="tns:EstadoCedulaResponse"/>
+<xs:complexType name="SarlafVIDResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="ListasResponse" nillable="true" type="tns:ArrayOfListasResponseInfo"/>
+<xs:element minOccurs="0" name="PepsResponse" nillable="true" type="tns:ArrayOfPepsResponseInfo"/>
+<xs:element minOccurs="0" name="NoticiasResponse" nillable="true" type="tns:ArrayOfNoticiasResponseInfo"/>
+<xs:element minOccurs="0" name="ValidacionIdentidad" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NovedadesMonitoreoResponse" nillable="true" type="tns:ArrayOfNovedadesMonitoreoResponseInfo"/>
+<xs:element minOccurs="0" name="NovedadesListasResponse" nillable="true" type="tns:ArrayOfNovedadesListasResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SarlafVIDResponse" nillable="true" type="tns:SarlafVIDResponse"/>
+<xs:complexType name="RelacionadosResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Relacionados" nillable="true" type="tns:ArrayOfRelacionadoInfoResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RelacionadosResponse" nillable="true" type="tns:RelacionadosResponse"/>
+<xs:complexType name="ArrayOfRelacionadoInfoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="RelacionadoInfoResponse" nillable="true" type="tns:RelacionadoInfoResponse"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfRelacionadoInfoResponse" nillable="true" type="tns:ArrayOfRelacionadoInfoResponse"/>
+<xs:complexType name="RelacionadoInfoResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="Denominacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ResumenRelacion" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RelacionadoInfoResponse" nillable="true" type="tns:RelacionadoInfoResponse"/>
+<xs:complexType name="NombramientosResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Registros" nillable="true" type="tns:ArrayOfNombramientosResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NombramientosResponse" nillable="true" type="tns:NombramientosResponse"/>
+<xs:complexType name="ArrayOfNombramientosResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NombramientosResponseInfo" nillable="true" type="tns:NombramientosResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNombramientosResponseInfo" nillable="true" type="tns:ArrayOfNombramientosResponseInfo"/>
+<xs:complexType name="NombramientosResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="NombramientoFechaPublic" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombramientoEdicto" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NombramientosResponseInfo" nillable="true" type="tns:NombramientosResponseInfo"/>
+<xs:complexType name="NovedadesRelacionadosPepsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="Status" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="CodigoError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MensajeError" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EstadoFuente" type="xs:unsignedByte"/>
+<xs:element minOccurs="0" name="EstadoFuenteLeyenda" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="Registros" nillable="true" type="tns:ArrayOfNovedadesRelacionadosPepsResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NovedadesRelacionadosPepsResponse" nillable="true" type="tns:NovedadesRelacionadosPepsResponse"/>
+<xs:complexType name="ArrayOfNovedadesRelacionadosPepsResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="NovedadesRelacionadosPepsResponseInfo" nillable="true" type="tns:NovedadesRelacionadosPepsResponseInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfNovedadesRelacionadosPepsResponseInfo" nillable="true" type="tns:ArrayOfNovedadesRelacionadosPepsResponseInfo"/>
+<xs:complexType name="NovedadesRelacionadosPepsResponseInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="Coincidencia" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LinkFuenteOriginal" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NombreRelacionado" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NroIdentificacion" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TituloNoticia" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NovedadesRelacionadosPepsResponseInfo" nillable="true" type="tns:NovedadesRelacionadosPepsResponseInfo"/>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<xs:complexType name="ArrayOfstring">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="ClienteGrupoJurad_buscarContraloria_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarContraloria"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarContraloria_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarContraloriaResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarDemandas_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarDemandas"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarDemandas_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarDemandasResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarDian_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarDian"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarDian_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarDianResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarContaduria_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarContaduria"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarContaduria_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarContaduriaResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarEsal_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarEsal"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarEsal_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarEsalResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarFosyga_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarFosyga"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarFosyga_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarFosygaResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNovedadesCamara_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarNovedadesCamara"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNovedadesCamara_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarNovedadesCamaraResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarDatosBasicos_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarDatosBasicos"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarDatosBasicos_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarDatosBasicosResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarPeps_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarPeps"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarPeps_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarPepsResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarProcuraduria_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarProcuraduria"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarProcuraduria_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarProcuraduriaResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRnt_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarRnt"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRnt_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarRntResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRup_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarRup"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRup_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarRupResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSarlaf_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSarlaf"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSarlaf_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSarlafResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSigep_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSigep"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSigep_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSigepResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRue_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarRue"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRue_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarRueResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarListas_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarListas"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarListas_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarListasResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSimit_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSimit"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSimit_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSimitResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNoticias_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarNoticias"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNoticias_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarNoticiasResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSisben_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSisben"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSisben_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSisbenResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSispro_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSispro"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSispro_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSisproResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSispro2_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSispro2"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSispro2_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSispro2Response"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarEstadoCedula_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarEstadoCedula"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarEstadoCedula_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarEstadoCedulaResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSarlafVID_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarSarlafVID"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarSarlafVID_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarSarlafVIDResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRelacionados_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarRelacionados"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarRelacionados_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarRelacionadosResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNombramientos_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarNombramientos"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNombramientos_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarNombramientosResponse"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNovedadesRelacionadosPeps_InputMessage">
+<wsdl:part name="parameters" element="tns:buscarNovedadesRelacionadosPeps"/>
+</wsdl:message>
+<wsdl:message name="ClienteGrupoJurad_buscarNovedadesRelacionadosPeps_OutputMessage">
+<wsdl:part name="parameters" element="tns:buscarNovedadesRelacionadosPepsResponse"/>
+</wsdl:message>
+<wsdl:portType name="ClienteGrupoJurad">
+<wsdl:operation name="buscarContraloria">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarContraloria" message="tns:ClienteGrupoJurad_buscarContraloria_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarContraloriaResponse" message="tns:ClienteGrupoJurad_buscarContraloria_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarDemandas">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDemandas" message="tns:ClienteGrupoJurad_buscarDemandas_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDemandasResponse" message="tns:ClienteGrupoJurad_buscarDemandas_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarDian">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDian" message="tns:ClienteGrupoJurad_buscarDian_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDianResponse" message="tns:ClienteGrupoJurad_buscarDian_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarContaduria">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarContaduria" message="tns:ClienteGrupoJurad_buscarContaduria_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarContaduriaResponse" message="tns:ClienteGrupoJurad_buscarContaduria_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarEsal">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarEsal" message="tns:ClienteGrupoJurad_buscarEsal_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarEsalResponse" message="tns:ClienteGrupoJurad_buscarEsal_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarFosyga">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarFosyga" message="tns:ClienteGrupoJurad_buscarFosyga_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarFosygaResponse" message="tns:ClienteGrupoJurad_buscarFosyga_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarNovedadesCamara">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNovedadesCamara" message="tns:ClienteGrupoJurad_buscarNovedadesCamara_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNovedadesCamaraResponse" message="tns:ClienteGrupoJurad_buscarNovedadesCamara_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarDatosBasicos">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDatosBasicos" message="tns:ClienteGrupoJurad_buscarDatosBasicos_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDatosBasicosResponse" message="tns:ClienteGrupoJurad_buscarDatosBasicos_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarPeps">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarPeps" message="tns:ClienteGrupoJurad_buscarPeps_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarPepsResponse" message="tns:ClienteGrupoJurad_buscarPeps_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarProcuraduria">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarProcuraduria" message="tns:ClienteGrupoJurad_buscarProcuraduria_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarProcuraduriaResponse" message="tns:ClienteGrupoJurad_buscarProcuraduria_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarRnt">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRnt" message="tns:ClienteGrupoJurad_buscarRnt_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRntResponse" message="tns:ClienteGrupoJurad_buscarRnt_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarRup">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRup" message="tns:ClienteGrupoJurad_buscarRup_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRupResponse" message="tns:ClienteGrupoJurad_buscarRup_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSarlaf">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSarlaf" message="tns:ClienteGrupoJurad_buscarSarlaf_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSarlafResponse" message="tns:ClienteGrupoJurad_buscarSarlaf_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSigep">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSigep" message="tns:ClienteGrupoJurad_buscarSigep_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSigepResponse" message="tns:ClienteGrupoJurad_buscarSigep_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarRue">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRue" message="tns:ClienteGrupoJurad_buscarRue_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRueResponse" message="tns:ClienteGrupoJurad_buscarRue_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarListas">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarListas" message="tns:ClienteGrupoJurad_buscarListas_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarListasResponse" message="tns:ClienteGrupoJurad_buscarListas_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSimit">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSimit" message="tns:ClienteGrupoJurad_buscarSimit_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSimitResponse" message="tns:ClienteGrupoJurad_buscarSimit_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarNoticias">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNoticias" message="tns:ClienteGrupoJurad_buscarNoticias_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNoticiasResponse" message="tns:ClienteGrupoJurad_buscarNoticias_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSisben">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSisben" message="tns:ClienteGrupoJurad_buscarSisben_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSisbenResponse" message="tns:ClienteGrupoJurad_buscarSisben_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSispro">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSispro" message="tns:ClienteGrupoJurad_buscarSispro_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSisproResponse" message="tns:ClienteGrupoJurad_buscarSispro_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSispro2">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSispro2" message="tns:ClienteGrupoJurad_buscarSispro2_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSispro2Response" message="tns:ClienteGrupoJurad_buscarSispro2_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarEstadoCedula">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarEstadoCedula" message="tns:ClienteGrupoJurad_buscarEstadoCedula_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarEstadoCedulaResponse" message="tns:ClienteGrupoJurad_buscarEstadoCedula_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarSarlafVID">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSarlafVID" message="tns:ClienteGrupoJurad_buscarSarlafVID_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSarlafVIDResponse" message="tns:ClienteGrupoJurad_buscarSarlafVID_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarRelacionados">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRelacionados" message="tns:ClienteGrupoJurad_buscarRelacionados_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRelacionadosResponse" message="tns:ClienteGrupoJurad_buscarRelacionados_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarNombramientos">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNombramientos" message="tns:ClienteGrupoJurad_buscarNombramientos_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNombramientosResponse" message="tns:ClienteGrupoJurad_buscarNombramientos_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="buscarNovedadesRelacionadosPeps">
+<wsdl:input wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNovedadesRelacionadosPeps" message="tns:ClienteGrupoJurad_buscarNovedadesRelacionadosPeps_InputMessage"/>
+<wsdl:output wsaw:Action="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNovedadesRelacionadosPepsResponse" message="tns:ClienteGrupoJurad_buscarNovedadesRelacionadosPeps_OutputMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_ClienteGrupoJurad" type="tns:ClienteGrupoJurad">
+<wsp:PolicyReference URI="#BasicHttpBinding_ClienteGrupoJurad_policy"/>
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="buscarContraloria">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarContraloria" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarDemandas">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDemandas" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarDian">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDian" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarContaduria">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarContaduria" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarEsal">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarEsal" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarFosyga">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarFosyga" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarNovedadesCamara">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNovedadesCamara" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarDatosBasicos">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarDatosBasicos" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarPeps">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarPeps" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarProcuraduria">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarProcuraduria" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarRnt">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRnt" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarRup">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRup" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSarlaf">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSarlaf" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSigep">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSigep" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarRue">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRue" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarListas">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarListas" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSimit">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSimit" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarNoticias">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNoticias" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSisben">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSisben" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSispro">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSispro" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSispro2">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSispro2" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarEstadoCedula">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarEstadoCedula" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarSarlafVID">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarSarlafVID" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarRelacionados">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarRelacionados" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarNombramientos">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNombramientos" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="buscarNovedadesRelacionadosPeps">
+<soap:operation soapAction="http://ws.grupojurad.com/ClienteGrupoJurad/buscarNovedadesRelacionadosPeps" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ClienteGrupoJurad">
+<wsdl:port name="BasicHttpBinding_ClienteGrupoJurad" binding="tns:BasicHttpBinding_ClienteGrupoJurad">
+<soap:address location="https://ws2.grupojurad.com:5310/App/ClienteGrupoJuradWs"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
